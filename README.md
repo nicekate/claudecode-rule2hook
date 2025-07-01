@@ -16,27 +16,72 @@ Convert natural language project rules into Claude Code hooks automatically! Wri
 
 ## 📦 Installation
 
+### Option 1: Project-Specific Installation (Recommended)
+
+To use the rule2hook command in your own project:
+
+```bash
+# 1. Clone this repository
+git clone https://github.com/zxdxjtu/claudecode-rule2hook.git
+
+# 2. Copy the command to your project
+mkdir -p your-project/.claude/commands
+cp claudecode-rule2hook/.claude/commands/rule2hook.md your-project/.claude/commands/
+
+# 3. Use in your project
+cd your-project
+# Now /project:rule2hook is available when using Claude Code in this directory
+```
+
+### Option 2: Global Installation
+
+To make the command available in all projects:
+
 ```bash
 # Clone the repository
 git clone https://github.com/zxdxjtu/claudecode-rule2hook.git
+
+# Copy to global Claude commands directory
+mkdir -p ~/.claude/commands
+cp claudecode-rule2hook/.claude/commands/rule2hook.md ~/.claude/commands/
+
+# Now /rule2hook is available globally (without /project: prefix)
+```
+
+### Option 3: Use Directly in This Repository
+
+```bash
+# Clone and use directly
+git clone https://github.com/zxdxjtu/claudecode-rule2hook.git
 cd claudecode-rule2hook
 
-# That's it! The slash command is ready to use
+# The /project:rule2hook command is available in this directory only
 ```
+
+### How it works
+
+Claude Code discovers slash commands by scanning:
+1. `~/.claude/commands/` for global commands (accessible as `/commandname`)
+2. `.claude/commands/` in the current project for project-specific commands (accessible as `/project:commandname`)
+
+**Important**: You must be in the correct directory when using Claude Code for the commands to be available.
 
 ## 🚀 Quick Start
 
-In Claude Code, type:
+After installation, in Claude Code, type:
 
 ```bash
-# Convert a single rule
-/project:claudecode-rule2hook "Format Python files with black after editing"
+# If using project-specific installation (Option 1)
+/project:rule2hook "Format Python files with black after editing"
+
+# If using global installation (Option 2)
+/rule2hook "Format Python files with black after editing"
 
 # Convert rules from CLAUDE.md
-/project:claudecode-rule2hook
+/project:rule2hook  # or /rule2hook if global
 
 # Convert multiple rules
-/project:claudecode-rule2hook "Run tests after editing, Format code before committing"
+/project:rule2hook "Run tests after editing, Format code before committing"
 ```
 
 ## 📚 How It Works
@@ -117,18 +162,18 @@ Create a `CLAUDE.md` file with your project rules:
 - Check for TODO comments before pushing
 ```
 
-Then run: `/project:claudecode-rule2hook`
+Then run: `/project:rule2hook`
 
 ### Complex Rules
 
 ```bash
-/project:claudecode-rule2hook "Run 'npm run lint && npm test' after editing source files"
+/project:rule2hook "Run 'npm run lint && npm test' after editing source files"
 ```
 
 ### Validation Rules
 
 ```bash
-/project:claudecode-rule2hook "Validate JSON schema before saving .json files"
+/project:rule2hook "Validate JSON schema before saving .json files"
 ```
 
 ## 🧪 Testing

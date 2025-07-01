@@ -7,7 +7,7 @@
 pwd  # Should display /Users/jessica/Desktop/repo/claude-hook-demo
 
 # 2. Check if Slash Command is ready
-ls -la .claude/commands/claudecode-rule2hook.md
+ls -la .claude/commands/rule2hook.md
 
 # 3. Backup existing hooks (if any)
 cp ~/.claude/hooks.json ~/.claude/hooks.json.backup 2>/dev/null || echo "No existing hooks"
@@ -17,7 +17,7 @@ cp ~/.claude/hooks.json ~/.claude/hooks.json.backup 2>/dev/null || echo "No exis
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Format Python files with black after editing"
+/project:rule2hook "Format Python files with black after editing"
 ```
 
 **Expected Result:**
@@ -29,7 +29,7 @@ cp ~/.claude/hooks.json ~/.claude/hooks.json.backup 2>/dev/null || echo "No exis
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Run git status when finishing a task"
+/project:rule2hook "Run git status when finishing a task"
 ```
 
 **Expected Result:**
@@ -41,7 +41,7 @@ cp ~/.claude/hooks.json ~/.claude/hooks.json.backup 2>/dev/null || echo "No exis
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Run prettier on JavaScript files after saving, Check for console.log before committing"
+/project:rule2hook "Run prettier on JavaScript files after saving, Check for console.log before committing"
 ```
 
 **Expected Result:**
@@ -59,7 +59,7 @@ cat CLAUDE.md
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook
+/project:rule2hook
 ```
 
 **Expected Result:**
@@ -70,7 +70,7 @@ cat CLAUDE.md
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Validate JSON files before saving them"
+/project:rule2hook "Validate JSON files before saving them"
 ```
 
 **Expected Result:**
@@ -82,7 +82,7 @@ cat CLAUDE.md
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Run npm test after modifying files in tests directory"
+/project:rule2hook "Run npm test after modifying files in tests directory"
 ```
 
 **Expected Result:**
@@ -119,7 +119,7 @@ echo "def test(): pass" >> test.py
 
 ```bash
 # Run another rule, check if merging works correctly
-/project:claudecode-rule2hook "Send notification when deploying"
+/project:rule2hook "Send notification when deploying"
 
 # Verify original hooks are preserved
 cat ~/.claude/hooks.json
@@ -131,7 +131,7 @@ cat ~/.claude/hooks.json
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Make sure code is clean"
+/project:rule2hook "Make sure code is clean"
 ```
 
 **Expected:** Claude should attempt to interpret and generate reasonable hook
@@ -140,7 +140,7 @@ cat ~/.claude/hooks.json
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Run 'npm run build && npm test' after changing source files"
+/project:rule2hook "Run 'npm run build && npm test' after changing source files"
 ```
 
 **Expected:** Correctly handle complex command with &&
@@ -149,7 +149,7 @@ cat ~/.claude/hooks.json
 
 **Input Command:**
 ```
-/project:claudecode-rule2hook "Check for patterns like TODO: or FIXME: before committing"
+/project:rule2hook "Check for patterns like TODO: or FIXME: before committing"
 ```
 
 **Expected:** Correctly handle special characters and regex patterns
@@ -169,7 +169,7 @@ echo '{"hooks": {}}' > ~/.claude/hooks.json
 ```markdown
 ### Test Case X: [Name]
 - **Execution Time**: 2024-XX-XX
-- **Input**: `/project:claudecode-rule2hook "..."`
+- **Input**: `/project:rule2hook "..."`
 - **Actual Output**:
   ```json
   [Paste generated configuration]

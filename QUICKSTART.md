@@ -1,11 +1,29 @@
 # Quick Start 🚀
 
-## 1. Try It Now!
+## 1. Install the Command
+
+Choose your installation method:
+
+```bash
+# Project-specific (recommended)
+mkdir -p .claude/commands
+cp path/to/claudecode-rule2hook/.claude/commands/rule2hook.md .claude/commands/
+
+# OR Global installation
+mkdir -p ~/.claude/commands  
+cp path/to/claudecode-rule2hook/.claude/commands/rule2hook.md ~/.claude/commands/
+```
+
+## 2. Try It Now!
 
 In Claude Code, type:
 
 ```
-/project:claudecode-rule2hook "Format Python files after editing"
+# Project-specific command
+/project:rule2hook "Format Python files after editing"
+
+# OR if globally installed
+/rule2hook "Format Python files after editing"
 ```
 
 Claude will:
@@ -14,24 +32,29 @@ Claude will:
 3. Save it to `~/.claude/hooks.json`
 4. Show you what was configured
 
-## 2. Use Your CLAUDE.md
+## 3. Use Your CLAUDE.md
 
 If you have rules in CLAUDE.md, just type:
 
 ```
-/project:claudecode-rule2hook
+/project:rule2hook  # or /rule2hook if global
 ```
 
-## 3. Common Rules
+## 4. Common Rules
 
 ```
-/project:claudecode-rule2hook "Run black on Python files after editing"
-/project:claudecode-rule2hook "Execute git status when finishing tasks"
-/project:claudecode-rule2hook "Run tests after modifying test files"
-/project:claudecode-rule2hook "Check for TODO comments before committing"
+# Use the appropriate command format based on your installation
+/project:rule2hook "Run black on Python files after editing"
+/project:rule2hook "Execute git status when finishing tasks"
+/project:rule2hook "Run tests after modifying test files"
+/project:rule2hook "Check for TODO comments before committing"
+
+# OR if globally installed
+/rule2hook "Run black on Python files after editing"
+# etc.
 ```
 
-## 4. Check Results
+## 5. Check Results
 
 See your configured hooks:
 ```

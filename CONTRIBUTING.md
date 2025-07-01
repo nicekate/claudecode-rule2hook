@@ -46,7 +46,7 @@ Unsure where to begin? You can start by looking through these issues:
 
 ### Improving the Slash Command
 
-The core of claudecode-rule2hook is the prompt in `.claude/commands/claudecode-rule2hook.md`. When improving it:
+The core of claudecode-rule2hook is the prompt in `.claude/commands/rule2hook.md`. When improving it:
 
 1. **Test thoroughly** - Ensure your changes work with various rule patterns
 2. **Maintain clarity** - The prompt should be clear and unambiguous
@@ -102,8 +102,8 @@ Before submitting your PR, ensure:
 
 claudecode-rule2hook is intentionally simple:
 
-1. User invokes `/project:claudecode-rule2hook`
-2. Claude receives the prompt from `claudecode-rule2hook.md`
+1. User invokes `/project:rule2hook`
+2. Claude receives the prompt from `rule2hook.md`
 3. Claude analyzes rules and generates hooks
 4. Claude saves configuration to `~/.claude/hooks.json`
 
@@ -112,7 +112,7 @@ No external dependencies or complex logic needed!
 ### Testing Your Changes
 
 1. Clone your fork locally
-2. Make changes to `.claude/commands/claudecode-rule2hook.md`
+2. Make changes to `.claude/commands/rule2hook.md`
 3. Test with various rule inputs
 4. Verify generated hooks work correctly
 

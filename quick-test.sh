@@ -3,7 +3,7 @@
 echo "🧪 claudecode-rule2hook Quick Test Script"
 echo "=========================="
 echo ""
-echo "This script will help you test the claudecode-rule2hook command"
+echo "This script will help you test the rule2hook command"
 echo ""
 
 # Color definitions
@@ -21,7 +21,7 @@ test_rule() {
     echo -e "${YELLOW}Rule:${NC} $rule"
     echo ""
     echo "Please execute in Claude Code:"
-    echo -e "${GREEN}/project:claudecode-rule2hook \"$rule\"${NC}"
+    echo -e "${GREEN}/project:rule2hook \"$rule\"${NC}"
     echo ""
     echo "Press Enter to continue to next test..."
     read
@@ -63,7 +63,7 @@ test_rule "Check for TODO comments before committing" "Code Check Rule"
 # Test 4 - Read from CLAUDE.md
 echo -e "${YELLOW}Test:${NC} Read rules from CLAUDE.md"
 echo "Please execute in Claude Code:"
-echo -e "${GREEN}/project:claudecode-rule2hook${NC}"
+echo -e "${GREEN}/project:rule2hook${NC}"
 echo ""
 echo "Press Enter to continue..."
 read
